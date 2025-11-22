@@ -74,19 +74,19 @@ const Index = () => {
   const totalCost = billingItems.reduce((sum, item) => sum + item.cost, 0);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/10">
       {/* Header */}
       <header className="border-b border-border/50 bg-card/80 sticky top-0 z-10 backdrop-blur-xl">
         <div className="px-3 py-4 sm:px-6 sm:py-5">
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-md opacity-40"></div>
-              <div className="relative p-2 sm:p-2.5 rounded-xl bg-gradient-to-br from-primary to-accent shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-lg opacity-60 animate-pulse"></div>
+              <div className="relative p-2 sm:p-2.5 rounded-xl bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/50">
                 <Building2 className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
               </div>
             </div>
             <div>
-              <h1 className="text-lg sm:text-3xl font-display font-bold text-primary tracking-tight">
+              <h1 className="text-lg sm:text-3xl font-display font-bold text-primary tracking-tight drop-shadow-sm">
                 Price Sniper
               </h1>
               <p className="text-[10px] sm:text-sm text-muted-foreground font-medium">
@@ -98,7 +98,12 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="px-3 py-4 sm:px-6 sm:py-10 max-w-5xl mx-auto">
+      <main className="px-3 py-4 sm:px-6 sm:py-10 max-w-5xl mx-auto relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+        </div>
         {/* Notification Settings */}
         <div className="mb-4 sm:mb-6">
           <NotificationSettings />
@@ -114,11 +119,11 @@ const Index = () => {
           <div className="space-y-4 sm:space-y-6 animate-slide-up">
             {/* Quick Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-              <div className="group relative bg-gradient-to-br from-card to-secondary rounded-2xl p-4 sm:p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-card via-primary/5 to-card rounded-2xl p-4 sm:p-5 border border-primary/20 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="p-1.5 rounded-lg bg-primary/10">
+                    <div className="p-1.5 rounded-lg bg-primary/15 ring-1 ring-primary/20">
                       <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
                     </div>
                     <span className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -130,11 +135,11 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-              <div className="group relative bg-gradient-to-br from-card to-secondary rounded-2xl p-4 sm:p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-card via-accent/5 to-card rounded-2xl p-4 sm:p-5 border border-accent/20 shadow-lg shadow-accent/5 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="p-1.5 rounded-lg bg-accent/10">
+                    <div className="p-1.5 rounded-lg bg-accent/15 ring-1 ring-accent/20">
                       <ClipboardList className="h-4 w-4 text-accent flex-shrink-0" />
                     </div>
                     <span className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -144,18 +149,18 @@ const Index = () => {
                   <p className="text-2xl sm:text-3xl font-display font-bold text-foreground">{billingItems.length}</p>
                 </div>
               </div>
-              <div className="group relative bg-gradient-to-br from-card to-secondary rounded-2xl p-4 sm:p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-card via-accent/5 to-card rounded-2xl p-4 sm:p-5 border border-accent/20 shadow-lg shadow-accent/5 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="p-1.5 rounded-lg bg-accent/10">
+                    <div className="p-1.5 rounded-lg bg-accent/15 ring-1 ring-accent/20">
                       <DollarSign className="h-4 w-4 text-accent flex-shrink-0" />
                     </div>
                     <span className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                       Est. Total
                     </span>
                   </div>
-                  <p className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <p className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                     ${totalCost.toLocaleString()}
                   </p>
                 </div>
