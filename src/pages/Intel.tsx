@@ -8,8 +8,8 @@ import { ArrowLeft, MapPin, AlertTriangle, AlertCircle, Info, Navigation, Home }
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface LocationData {
-  lat: number;
-  lon: number;
+  lat: string;
+  lon: string;
   display_name: string;
   address?: {
     road?: string;
@@ -237,7 +237,7 @@ const Intel = () => {
               <CardDescription>
                 {locationData && (
                   <span className="font-mono-data">
-                    {locationData.lat.toFixed(6)}, {locationData.lon.toFixed(6)}
+                    {parseFloat(locationData.lat).toFixed(6)}, {parseFloat(locationData.lon).toFixed(6)}
                   </span>
                 )}
               </CardDescription>
@@ -253,7 +253,7 @@ const Intel = () => {
               ) : locationData ? (
                 <div className="h-[400px] rounded-lg overflow-hidden border border-border">
                   <MapContainer
-                    center={[parseFloat(locationData.lat.toString()), parseFloat(locationData.lon.toString())]}
+                    center={[parseFloat(locationData.lat), parseFloat(locationData.lon)]}
                     zoom={16}
                     style={{ height: "100%", width: "100%" }}
                     className="z-0"
@@ -263,12 +263,12 @@ const Intel = () => {
                       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     <Circle
-                      center={[parseFloat(locationData.lat.toString()), parseFloat(locationData.lon.toString())]}
+                      center={[parseFloat(locationData.lat), parseFloat(locationData.lon)]}
                       radius={100}
                       pathOptions={{ color: "hsl(210, 100%, 50%)", fillColor: "hsl(210, 100%, 50%)", fillOpacity: 0.1 }}
                     />
                     <Marker
-                      position={[parseFloat(locationData.lat.toString()), parseFloat(locationData.lon.toString())]}
+                      position={[parseFloat(locationData.lat), parseFloat(locationData.lon)]}
                       icon={customIcon}
                     >
                       <Popup>
@@ -329,7 +329,7 @@ const Intel = () => {
                 <div>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Coordinates</p>
                   <p className="text-xs font-mono-data break-all">
-                    {locationData.lat.toFixed(6)}, {locationData.lon.toFixed(6)}
+                    {parseFloat(locationData.lat).toFixed(6)}, {parseFloat(locationData.lon).toFixed(6)}
                   </p>
                 </div>
               )}
