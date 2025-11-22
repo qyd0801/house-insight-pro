@@ -87,7 +87,7 @@ const Index = () => {
             </div>
             <div>
               <h1 className="text-lg sm:text-3xl font-display font-bold text-primary tracking-tight">
-                RenovateRight
+                Price Sniper
               </h1>
               <p className="text-[10px] sm:text-sm text-muted-foreground font-medium">
                 Smart inspection & cost estimates

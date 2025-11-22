@@ -17,8 +17,8 @@ export default defineConfig(({ mode }) => ({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "mask-icon.svg"],
       manifest: {
-        name: "RenovateRight",
-        short_name: "RenovateRight",
+        name: "Price Sniper",
+        short_name: "Price Sniper",
         description: "Smart property inspection and cost estimation for contractors",
         theme_color: "#9333ea",
         background_color: "#fafafa",
